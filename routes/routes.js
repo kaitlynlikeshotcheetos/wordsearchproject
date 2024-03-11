@@ -1,9 +1,7 @@
-import express from 'express';
-import * as ctrl from '../controllers/mainController.js';
-
+const express = require('express');
 const router = express.Router();
+const gameController = require('../controllers/gameController');
 
-// Define routes
-router.get('/', ctrl.home);
-            
-export default router;
+router.get('/:category', gameController.getWords);
+
+module.exports = router;
