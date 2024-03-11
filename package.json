@@ -1,5 +1,5 @@
 {
-  "name": "0---node-template",
+  "name": "wordsearchproject",
   "version": "1.0.0",
   "main": "app.js",
   "type": "module",
