@@ -5,10 +5,12 @@ export const login = (req, res) => {
   res.render('login');
 }
 
-export const verifyLogin = 
-  passport.authenticate('local', { successRedirect: '/',
-                                   failureRedirect: '/login',
-                                   failureFlash: false });
+export const verifyLogin = passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/login',
+  failureFlash: false
+});
+
 
 export const register = (req, res) => {
   res.render('register');
