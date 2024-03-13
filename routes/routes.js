@@ -4,7 +4,7 @@ import * as auth from '../controllers/authController.js';
 
 
 const router = express.Router();
-const gameController = require('../controllers/gameController');
+import gameController from '../controllers/gameController.js';
 
 router.get('/:category', gameController.getWords);
 

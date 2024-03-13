@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import MongoStore from 'connect-mongo';
+import connectMongo from 'connect-mongo';
 import passport from 'passport';
 import bcrypt from 'bcrypt';
 import session from 'express-session';
@@ -12,8 +12,7 @@ dotenv.config({ path: 'process.env' });
 
 
 const app = express();
-const routes = require('./routes/routes');
-
+import routes from './routes/routes.js';
 
 
 // Connect to MongoDB
