@@ -10,7 +10,11 @@ import User from './models/User.js';
 import dotenv from 'dotenv'; 
 dotenv.config({ path: 'process.env' });
 
+
 const app = express();
+const routes = require('./routes/routes');
+
+
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URL)
@@ -39,15 +43,16 @@ app.use(passport.session());
 //Express (EJS)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+
 app.set('view engine', 'ejs');
 
-// Define routes
-import routes from './routes/routes.js'; 
+// Routes
 app.use('/', routes);
 
-const PORT = process.env.PORT || 3000; 
+// Start server
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
 
 
